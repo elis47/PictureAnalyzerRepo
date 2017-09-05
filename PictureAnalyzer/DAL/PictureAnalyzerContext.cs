@@ -12,6 +12,7 @@ namespace PictureAnalyzer.DAL
     {
         public PictureAnalyzerContext() : base("PictureAnalyzerContext")
         {
+
         }
 
         public DbSet<Painter> Painters { get; set; }

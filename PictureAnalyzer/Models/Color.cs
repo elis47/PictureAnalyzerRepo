@@ -11,5 +11,7 @@ namespace PictureAnalyzer.Models
         public string Name { get; set; }
         public string Description { get; set; }
         public string PersonalityTraits { get; set; }
+
+        public virtual ICollection<Painting> Paintings { get; set; }
     }
 }

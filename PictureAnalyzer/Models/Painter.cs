@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Web;
 
@@ -11,8 +12,12 @@ namespace PictureAnalyzer.Models
         public string Name { get; set; }
         public string Description { get; set; }
         public string Country { get; set; }
-        public DateTime BirthDate { get; set; }
-        public DateTime PassDate { get; set; }
+        [DataType(DataType.Date)]
+        [DisplayFormat(DataFormatString = "{0:yyyy-MM-dd}", ApplyFormatInEditMode = true)]
+        public DateTime? BirthDate { get; set; }
+        [DataType(DataType.Date)]
+        [DisplayFormat(DataFormatString = "{0:yyyy-MM-dd}", ApplyFormatInEditMode = true)]
+        public DateTime? PassDate { get; set; }
 
         public virtual ICollection<Painting> Paintings { get; set; }
     }
