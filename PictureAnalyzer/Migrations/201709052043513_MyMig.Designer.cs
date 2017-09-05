@@ -7,13 +7,13 @@ namespace PictureAnalyzer.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.1.3-40302")]
-    public sealed partial class NewMigration : IMigrationMetadata
+    public sealed partial class MyMig : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(NewMigration));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(MyMig));
         
         string IMigrationMetadata.Id
         {
-            get { return "201709052015031_NewMigration"; }
+            get { return "201709052043513_MyMig"; }
         }
         
         string IMigrationMetadata.Source
