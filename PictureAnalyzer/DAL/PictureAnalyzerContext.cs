@@ -12,9 +12,6 @@ namespace PictureAnalyzer.DAL
     {
         public PictureAnalyzerContext() : base("PictureAnalyzerContext")
         {
-            Database.SetInitializer<PictureAnalyzerContext>(null);
-            Configuration.LazyLoadingEnabled = false;
-            Configuration.ProxyCreationEnabled = false;
         }
 
         public DbSet<Painter> Painters { get; set; }
@@ -24,11 +21,6 @@ namespace PictureAnalyzer.DAL
         public DbSet<Gallery> Galleries { get; set; }
         public DbSet<Color> Colors { get; set; }
         public DbSet<Models.Type> Types { get; set; }
-
-        public static PictureAnalyzerContext Create()
-        {
-            return new PictureAnalyzerContext();
-        }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
