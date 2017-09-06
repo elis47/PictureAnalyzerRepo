@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Web;
 
@@ -9,14 +10,20 @@ namespace PictureAnalyzer.Models
     public class Painting
     {
         public int ID { get; set; }
-        [StringLength(50, ErrorMessage = "The name can not be longer than 50 characters.")]
+        [Required]
+        [StringLength(100, ErrorMessage = "The name can not be longer than 100 characters.")]
+        [Index(IsUnique = true)]
         public string Name { get; set; }
-        [StringLength(250, ErrorMessage = "The description can not be longer than 250 characters.")]
+        [StringLength(600, ErrorMessage = "The description can not be longer than 600 characters.")]
         public string Description { get; set; }
-
+        [Required]
+        [MaxLength(100)]
         public string CurrentOwner { get; set; }
+        [Required]
         public double HarmonyIndex { get; set; }
+        [Required]
         public double ConstrastIndex { get; set; }
+        [Required]
         public double LuminosityIndex { get; set; }
 
         //public string ApplicationUserID { get; set; }

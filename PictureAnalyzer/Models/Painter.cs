@@ -10,8 +10,14 @@ namespace PictureAnalyzer.Models
     public class Painter
     {
         public int ID { get; set; }
+        [Required]
+        [MaxLength(100)]
+        [Index(IsUnique = true)]
         public string Name { get; set; }
+        [MaxLength(600)]
         public string Description { get; set; }
+        [Required]
+        [MaxLength(100)]
         public string Country { get; set; }
         [DataType(DataType.Date)]
         [Column(TypeName = "DateTime2")]
